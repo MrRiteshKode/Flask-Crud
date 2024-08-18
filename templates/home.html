@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+{%block title%}Home{%endblock title%}
+{%block body%}
+
+{% if data|length==0%}
+<div class="jumbotron container mt-10">
+    <h1 class="display-4">No records found !</h1>
+    <p class="lead">Currently no data present in database , so you have to add some data to show here.</p>
+    <hr class="my-4">
+    <p>You can add data , modify data and delete data as well.</p>
+    <p class="lead">
+        <a href="/add" class="btn bg-purple text-white float-right">Add</a>
+    </p>
+  </div>
+{%else%}
+
+<div class="container mt-10"><h2 class="text-center">List of Students</h2></div>
+
+<div class="container table-responsive mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Class</th>
+                <th scope="col">Section</th>
+                <th scope="col">Roll No</th>
+                <th scope="col">Admission No.</th>
+                <th scope="col">Marks</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for data in data%}
+
+            <tr>
+                <th scope="col">{{loop.index}}</th>
+                <th scope="col">{{data.name}}</th>
+                <th scope="col">{{data.class_}}</th>
+                <th scope="col">{{data.sec}}</th>
+                <th scope="col">{{data.rollNo}}</th>
+                <th scope="col">{{data.admissionNo}}</th>
+                <th scope="col">{{data.marks}}</th>
+                <th scope="col"><a href="/update/{{data.sno}}" class="btn bg-purple m-1 text-white">Update</a> <a
+                        href="/delete/{{data.sno}}" class="btn m-1 bg-danger text-white">Delete</a></th>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>+
+{%endif%}
+{%endblock body%}

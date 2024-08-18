@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+{%block title%}Add{%endblock title%}
+{%block body%}
+
+<div class="container mt-10">
+    <div><h2 class="text-center">Add a new Student</h2></div>
+    <form action="/add" method="POST">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Name">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Class</label>
+        <input type="text" name="class" class="form-control" id="formGroupExampleInput" placeholder="Class">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Section</label>
+        <input type="text" name="section" class="form-control" id="formGroupExampleInput2" placeholder="Section">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Roll No</label>
+        <input type="number" name="rollNo" class="form-control" id="formGroupExampleInput" placeholder="Roll No.">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Admission No.</label>
+        <input type="number" name="admissionNo" class="form-control" id="formGroupExampleInput2" placeholder="Admission No.">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Marks</label>
+        <input type="number" name="marks" class="form-control" id="formGroupExampleInput2" placeholder="Marks">
+      </div>
+      <button class="btn bg-purple text-white">Submit</button>
+    </form>
+</div>
+
+{%endblock body%}

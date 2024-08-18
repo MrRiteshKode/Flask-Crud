@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%block title%}Update{%endblock title%}
+{%block body%}
+
+{% if student%}
+<div class="container mt-10">
+    <div><h2 class="text-center">Update the Student</h2></div>
+    <form action="/update/{{student.sno}}" method="POST">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Name</label>
+        <input type="text" name="name" value="{{student.name}}" class="form-control" id="formGroupExampleInput" placeholder="Name">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Class</label>
+        <input type="text" name="class" value="{{student.class_}}" class="form-control" id="formGroupExampleInput" placeholder="Class">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Section</label>
+        <input type="text" name="section" value="{{student.sec}}" class="form-control" id="formGroupExampleInput2" placeholder="Section">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Roll No</label>
+        <input type="number" name="rollNo" value="{{student.rollNo}}" class="form-control" id="formGroupExampleInput" placeholder="Roll No.">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Admission No.</label>
+        <input type="number" name="admissionNo" value="{{student.admissionNo}}" class="form-control" id="formGroupExampleInput2" placeholder="Admission No.">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Marks</label>
+        <input type="number" name="marks" value="{{student.marks}}" class="form-control" id="formGroupExampleInput2" placeholder="Marks">
+      </div>
+      <button class="btn bg-purple text-white">Submit</button>
+    </form>
+</div>
+{%endif%}
+{%endblock body%}
